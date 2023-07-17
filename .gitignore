@@ -4,6 +4,7 @@ out/
 build/
 
 *.iml
+*.log
 
 node_modules
 out

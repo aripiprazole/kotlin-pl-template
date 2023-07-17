@@ -3,6 +3,17 @@
     "editor.rulers": [100]
   },
   "[typescript]": {
-    "editor.rulers": [120]
+    "editor.rulers": [120],
+    "editor.defaultFormatter": null,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[javascript]": {
+    "editor.rulers": [120],
+    "editor.defaultFormatter": null,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
   }
 }

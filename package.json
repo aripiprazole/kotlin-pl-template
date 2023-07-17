@@ -32,7 +32,7 @@
       "type": "object",
       "title": "lura-language-server",
       "properties": {
-        "asena-language-server.trace.server": {
+        "lura-language-server.trace.server": {
           "type": "string",
           "scope": "window",
           "enum": [
@@ -52,6 +52,7 @@
     }
   },
   "scripts": {
+    "prepare": "husky install",
     "postinstall": "cd editors/vscode && yarn",
     "vscode:prepublish": "npm run esbuild-base -- --minify",
     "esbuild-base": "esbuild ./editors/vscode/src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
@@ -68,6 +69,8 @@
     "publish": "vsce publish --no-dependencies"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.0",
     "@types/node": "^12.12.0",
@@ -78,8 +81,13 @@
     "electron-rebuild": "^1.11.0",
     "esbuild": "^0.15.10",
     "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "glob": "^7.1.7",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "mocha": "^8.0.1",
+    "prettier": "^3.0.0",
     "typescript": "^4.4.3",
     "vscode-test": "^1.4.0",
     "vscode-uri": "^3.0.2",

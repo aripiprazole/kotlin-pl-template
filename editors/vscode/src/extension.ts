@@ -14,21 +14,15 @@
  *     limitations under the License.
  */
 
-import { workspace, EventEmitter, ExtensionContext, window, TextDocumentChangeEvent } from 'vscode';
+import {workspace, EventEmitter, window, ExtensionContext, Disposable, TextDocumentChangeEvent} from 'vscode';
 
-import {
-  Disposable,
-  Executable,
-  LanguageClient,
-  LanguageClientOptions,
-  ServerOptions,
-} from 'vscode-languageclient/node';
+import {Executable, LanguageClient, LanguageClientOptions, ServerOptions} from 'vscode-languageclient/node';
 
 let client: LanguageClient;
 
 export async function activate(_ctx: ExtensionContext) {
-  const traceOutputChannel = window.createOutputChannel('Asena Language Server Trace');
-  const command = process.env.SERVER_PATH || 'asena-language-server';
+  const traceOutputChannel = window.createOutputChannel('Lura Language Server Trace');
+  const command = process.env.SERVER_PATH || 'lura-language-server';
 
   const run: Executable = {
     command,
@@ -50,9 +44,9 @@ export async function activate(_ctx: ExtensionContext) {
   // If the extension is launched in debug mode then the debug server options are used
   // Otherwise the run options are used
   // Options to control the language client
-  let clientOptions: LanguageClientOptions = {
+  const clientOptions: LanguageClientOptions = {
     // Register the server for plain text documents
-    documentSelector: [{ scheme: 'file', language: 'asena' }],
+    documentSelector: [{scheme: 'file', language: 'lura'}],
     synchronize: {
       // Notify the server about file changes to '.clientrc files contained in the workspace
       fileEvents: workspace.createFileSystemWatcher('**/.clientrc'),
@@ -61,7 +55,7 @@ export async function activate(_ctx: ExtensionContext) {
   };
 
   // Create the language client and start the client.
-  client = new LanguageClient('asena-language-server', 'asena language server', serverOptions, clientOptions);
+  client = new LanguageClient('lura-language-server', 'Lura Language Server', serverOptions, clientOptions);
   client.start();
 }
 

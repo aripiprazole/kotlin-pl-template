@@ -22,10 +22,10 @@ let client: LanguageClient;
 
 export async function activate(_ctx: ExtensionContext) {
   const traceOutputChannel = window.createOutputChannel('Lura Language Server Trace');
-  const command = process.env.SERVER_PATH || 'lura-language-server';
 
   const run: Executable = {
-    command,
+    command: 'java',
+    args: process.env.SERVER_PATH ? ['-jar', process.env.SERVER_PATH || 'lura-language-server.jar'] : [],
     options: {
       env: {
         ...process.env,

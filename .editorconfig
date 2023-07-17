@@ -5,8 +5,8 @@ indent_size = 2
 indent_style = space
 insert_final_newline = true
 max_line_length = 120
-tab_width = 4
-ij_continuation_indent_size = 4
+tab_width = 2
+ij_continuation_indent_size = 2
 ij_formatter_off_tag = @formatter:off
 ij_formatter_on_tag = @formatter:on
 ij_formatter_tags_enabled = true
@@ -299,7 +299,7 @@ ij_markdown_wrap_text_inside_blockquotes = true
 
 [{*.gradle.kts,*.kt,*.kts,*.main.kts,*.space.kts}]
 disabled_rules = filename
-max_line_length = 100
+max_line_length = 120
 ij_kotlin_align_in_columns_case_branch = false
 ij_kotlin_align_multiline_binary_operation = false
 ij_kotlin_align_multiline_extends_list = false
@@ -381,6 +381,7 @@ ij_kotlin_while_on_new_line = false
 ij_kotlin_wrap_elvis_expressions = 1
 ij_kotlin_wrap_expression_body_functions = 1
 ij_kotlin_wrap_first_method_in_call_chain = false
+ij_kotlin_continuation_indent_size = 2
 
 [*.gradle.kts]
 max_line_length = 120

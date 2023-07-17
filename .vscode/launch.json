@@ -14,7 +14,7 @@
         "script": "watch"
       },
       "env": {
-        "SERVER_PATH": "${workspaceRoot}/target/debug/asena-language-server"
+        "SERVER_PATH": "${workspaceRoot}/lura-lsp/build/libs/lura-lsp-all.jar"
       }
     },
     {

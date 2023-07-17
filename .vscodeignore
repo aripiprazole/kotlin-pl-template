@@ -1,0 +1,10 @@
+.vscode
+node_modules
+out/
+src/
+build/
+.gradle
+tsconfig.json
+webpack.config.js
+editors/vscode/**
+target

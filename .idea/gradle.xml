@@ -8,7 +8,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/lura" />
+            <option value="$PROJECT_DIR$/lura-grammar" />
             <option value="$PROJECT_DIR$/lura-lsp" />
+            <option value="$PROJECT_DIR$/lura-parser" />
+            <option value="$PROJECT_DIR$/lura-syntax" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -41,27 +41,12 @@ subprojects {
 
     sourceSets {
       all {
+        afterEvaluate {
+          kotlin.setSrcDirs(listOf("${project.projectDir}/${this@all.name.replace("Main", "")}"))
+        }
         languageSettings {
           optIn("kotlin.RequiresOptIn")
           optIn("kotlin.contracts.ExperimentalContracts")
-        }
-      }
-
-      afterEvaluate {
-        get("jvmTest")?.apply {
-          kotlin.srcDirs("${project.projectDir}/jvmTest")
-        }
-
-        get("jvmMain")?.apply {
-          kotlin.srcDirs("${project.projectDir}/jvm")
-        }
-
-        get("commonMain")?.apply {
-          kotlin.srcDirs("${project.projectDir}/common")
-        }
-
-        get("commonTest")?.apply {
-          kotlin.srcDirs("${project.projectDir}/commonTest")
         }
       }
     }
